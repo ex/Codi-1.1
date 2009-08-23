@@ -1,0 +1,524 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Spanish (Mexican) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ESM)
+#ifdef _WIN32
+LANGUAGE LANG_SPANISH, SUBLANG_SPANISH_MEXICAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_ABOUT DIALOGEX 60, 0, 229, 165
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Acerca de CODI..."
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "",IDBT_SALIR,82,153,6,8,NOT WS_VISIBLE
+    LTEXT           "Esta es la versión 1.1 de CODI, una de las cosas que necesitaba era la opción de extraer fragmentos internos de un archivo asi que aqui está. También estoy pensando en la opción de complementos (plugins) pero por ahora es sólo una idea.",
+                    IDC_STATIC,90,1,137,52,NOT WS_GROUP,WS_EX_STATICEDGE
+    LTEXT           "exe_q_tor@hotmail.com",IDC_STATIC,2,152,87,11,NOT 
+                    WS_GROUP,WS_EX_STATICEDGE
+    LTEXT           "ADVERTENCIA: Este programa es gratuito. La copia y/o distribución sin autorización del mismo o de una parte del mismo es bien recibida y alentada.   El autor no se hace responsable del uso ni del resultado del uso del mismo.",
+                    IDC_STATIC,90,111,137,52,NOT WS_GROUP,WS_EX_STATICEDGE
+    LTEXT           "Con respecto a mi persona no tengo ya ninguna historia patética que contar, excepto quizás que como la animación de al lado no se veía con Windows XP me vi forzado a rehacerla ...y gente hay que dirá que esta fué la única razón de la 1.1    ;-p",
+                    IDC_STATIC,90,56,137,52,NOT WS_GROUP,WS_EX_STATICEDGE
+    CONTROL         126,IDC_IMAGEN,"Static",SS_BITMAP,2,1,87,150,
+                    WS_EX_CLIENTEDGE
+END
+
+IDD_BUSCAR_ARCHIVO DIALOGEX 0, 0, 276, 156
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Escoger archivos..."
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         125,IDC_STATIC,"Static",SS_BITMAP,10,2,87,150,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "Primero elige el archivo a fragmentarse. Pulsa el botón de abajo para iniciar la búsqueda:",
+                    IDLB_PARTIR1,122,23,125,25
+    PUSHBUTTON      "Elegir Archivo a &Partir",IDBT_ELEGIR_ARCHIVO,141,55,93,
+                    15
+    LTEXT           "Ahora tienes que elegir la carpeta donde se guardarán los archivos fragmentados:  ",
+                    IDLB_PARTIR2,122,90,130,21
+    PUSHBUTTON      "Elegir &Carpeta",IDBT_ELEGIR_CARPETA,141,118,93,15
+    GROUPBOX        "",IDC_STATIC,107,0,158,153
+END
+
+IDD_BUSCAR_CARPETA DIALOGEX 0, 0, 276, 156
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Indicar la ubicación de los archivos fragmentados..."
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         125,IDC_STATIC,"Static",SS_BITMAP,10,2,87,150,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "Para que puedas reunir los archivos fragmentados en el archivo original, sigue los siguientes pasos:",
+                    IDLB_REUNIR,107,6,157,18
+    PUSHBUTTON      "&Elegir Carpeta de Archivos Fragmentados",
+                    IDBT_ELEGIR_CARPETA,116,80,145,15
+    LTEXT           "PRIMERO: crea una carpeta vacia y copia en ella todos los archivos fragmentados. (Esto puedes hacerlo con el Explorador de Window).",
+                    IDLB_1,116,25,151,26
+    LTEXT           "SEGUNDO: haz click al botón de abajo y en la lista que se presenta selecciona la carpeta que creaste:",
+                    IDLB_2,116,52,152,26
+    PUSHBUTTON      "&Poner Nombre al Destino",IDBT_REUNIR_DESTINO,168,134,
+                    93,15
+    LTEXT           "Si deseas puedes ponerle un nombre al archivo que se formará, de lo contrario será asignado automáticamente y se creará en la misma carpeta que elegiste.",
+                    IDC_STATIC,116,97,143,33
+    CONTROL         "Au&tomático",IDCHK_AUTOMATICO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,116,136,51,10
+    GROUPBOX        "",IDC_STATIC,101,0,170,152
+END
+
+IDD_NUMERO_ARCHIVOS DIALOGEX 0, 0, 276, 156
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Número de archivos..."
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         126,IDC_STATIC,"Static",SS_BITMAP,10,2,87,150,
+                    WS_EX_CLIENTEDGE
+    CONTROL         "Por &Número",IDRB_POR_NUMERO,"Button",
+                    BS_AUTORADIOBUTTON,124,11,55,11
+    CONTROL         "Por &Tamaño",IDRB_POR_TAMANYO,"Button",
+                    BS_AUTORADIOBUTTON,191,11,53,11
+    GROUPBOX        "Número",IDFRA_NUMERO,122,26,135,59
+    LTEXT           "Ingresa el número de archivos en que quieres partir tu archivo original: (mínimo 2 , máximo 99)",
+                    IDLB_NUMERO,128,36,114,26
+    EDITTEXT        IDTXT_NUMERO,167,65,48,14,ES_AUTOHSCROLL | ES_NUMBER
+    GROUPBOX        "Tamaño",IDFRA_TAMANYO,122,89,135,60,WS_DISABLED
+    LTEXT           "Ingresa el tamaño máximo para los archivos fragmentados en BYTES.       ( 1300000  bytes son casi 1.3 MB )",
+                    IDLB_TAMANYO,128,100,124,26,WS_DISABLED
+    EDITTEXT        IDTXT_TAMANYO,167,130,48,14,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    GROUPBOX        "",IDC_STATIC,107,0,158,153
+END
+
+IDD_FINALIZAR DIALOGEX 0, 0, 276, 156
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Finalizar"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         127,IDC_STATIC,"Static",SS_BITMAP,10,2,87,150,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "Aqui se muestra un resumen de la información recibida, si estás de acuerdo presiona [Finalizar]. También puedes volver atrás para cambiar algo que sea incorrecto:",
+                    IDLB_RESUMEN,107,2,155,33
+    LISTBOX         IDL_RESUMEN,107,38,158,114,NOT LBS_NOTIFY | 
+                    LBS_NOINTEGRALHEIGHT | LBS_NOSEL | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP
+END
+
+IDD_PASSWORD DIALOG DISCARDABLE  0, 0, 276, 156
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Necesitas un numero?"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDTX_RESPUESTA,99,87,62,13,ES_AUTOHSCROLL
+    EDITTEXT        IDTX_DIA,81,134,15,12,ES_AUTOHSCROLL | ES_NUMBER
+    COMBOBOX        IDCB_MES,99,134,62,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDTX_ANYO,163,134,23,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "A&ZUL",IDPB_AZUL,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_TABSTOP,36,41,62,13
+    CONTROL         "&ROJO",IDPB_ROJO,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_TABSTOP,100,41,62,13
+    CONTROL         "&VERDE",IDPB_VERDE,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_TABSTOP,164,41,62,13
+    LTEXT           "Bueno, primero tendrás que responder algunas preguntas, aseguráte de decir la verdad pues eso podría ayudarte a recordar tu contraseña si se te hubiera olvidado:además mira que nadie te esté haciendo saping  (fisgoneando)",
+                    IDC_STATIC,4,2,258,26
+    LTEXT           "2) ¿Qué fecha recuerdas siempre? Como el día que naciste, o el día que nació ella (o él), o el día que te matrisuicidaste, etc, etc. (Ejm: 12-Diciembre-1983)",
+                    IDC_STATIC,3,110,261,18
+    LTEXT           "1) ¿Cómo te gustaría llamarte? ( y NO como te llamas) Ejm: Superman, Vladi, Bill Gate$, hmm...mi nombre está bien, soy perfecto(a).. (min. 2 -- max. 9 caracteres)",
+                    IDLB_PREGUNTA,8,56,255,27
+    GROUPBOX        "Escoge un color y responde la pregunta:",IDC_STATIC,2,
+                    29,266,76
+END
+
+IDD_CRIPTO DIALOGEX 0, 0, 276, 156
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Selecciona el archivo e ingresa tu código..."
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "&Elegir Archivo Fuente",IDBT_FUENTE,119,14,141,15
+    CONTROL         "Au&tomático",IDCHK_AUTOMATICO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,119,70,51,10
+    PUSHBUTTON      "&Poner Nombre al Destino",IDBT_DESTINO,170,68,90,15
+    CONTROL         "&Máscara",IDCHK_MASCARA,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,118,122,42,9
+    EDITTEXT        IDTXT_CODIGO,170,120,93,12,ES_PASSWORD | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDTXT_CONFIRMACION,170,135,93,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         135,IDC_STATIC,"Static",SS_BITMAP,10,2,87,150,
+                    WS_EX_CLIENTEDGE
+    GROUPBOX        "Elige el archivo fuente y el destino:",IDFRA_CRIPTO,106,
+                    1,166,86
+    GROUPBOX        "Ingresa tu Código:",IDFRA_CODIGO,105,90,166,62
+    LTEXT           "Ingresa 9 dígitos (si la Máscara está activada debes ingresar también la confirmación)",
+                    IDC_STATIC,113,101,150,18
+    LTEXT           "Confirmación:",IDC_STATIC,118,136,43,10
+    LTEXT           "Si deseas puedes ponerle un nombre al archivo que se formará, de lo contrario será asignado automáticamente y se creará en la misma carpeta del archivo que elegiste.",
+                    IDC_STATIC,118,32,143,32
+END
+
+IDD_DRAGFILES DIALOG DISCARDABLE  70, 50, 213, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Elegir opcion:"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,154,44,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,154,69,50,14
+    LTEXT           "Haz elegido el archivo:",IDC_STATIC,3,3,102,9
+    EDITTEXT        IDTX_DRAGFILE,3,15,206,13,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "&Partirlo",IDRB_PARTIR,"Button",BS_AUTORADIOBUTTON,10,
+                    54,57,13
+    CONTROL         "&Reunirlo",IDRB_REUNIR,"Button",BS_AUTORADIOBUTTON,10,
+                    71,57,13
+    CONTROL         "&Encriptarlo",IDRB_ENCRIPTAR,"Button",
+                    BS_AUTORADIOBUTTON,73,54,57,13
+    CONTROL         "&Desencriptarlo",IDRB_DESENCRIPTAR,"Button",
+                    BS_AUTORADIOBUTTON,73,71,57,13
+    GROUPBOX        "",IDC_STATIC,3,30,206,60
+    LTEXT           "Elige lo que quieres hacer con el archivo:",IDC_STATIC,
+                    9,40,139,11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DLG_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 222
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 158
+    END
+
+    IDD_BUSCAR_ARCHIVO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 269
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_NUMERO_ARCHIVOS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 269
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_FINALIZAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 269
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_DRAGFILES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_CODI_ICON           ICON    DISCARDABLE     "CODI.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_CODI_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&Archivo"
+    BEGIN
+        MENUITEM "&Partir\tCtrl+P",             IDM_PARTIR
+        MENUITEM "&Reunir\tCtrl+R",             IDM_REUNIR
+        MENUITEM "Ex&traer\tCtrl+T",            IDM_EXTRAER
+        MENUITEM SEPARATOR
+        MENUITEM "&Borrar\tCtrl+B",             IDM_BORRAR
+        MENUITEM "&Comparar\tF2",               IDM_COMPARAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Salir\tAlt+F4",              IDM_SALIR, CHECKED
+    END
+    POPUP "&Cripto"
+    BEGIN
+        MENUITEM "&Encriptar\tCtrl+E",          IDM_ENCRIPTAR
+        MENUITEM "&Desencriptar\tCtrl+D",       IDM_DESENCRIPTAR
+        MENUITEM SEPARATOR
+        MENUITEM "Contraseña...\tF3",           IDM_PASSWORD
+    END
+    POPUP "&Exploración"
+    BEGIN
+        MENUITEM "&Iniciar exploración\tCtrl+I", IDM_EXPLORAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Opciones de búsqueda...\tCtrl+O", 
+                                                IDM_OPCIONES_EXPLORACION
+    END
+    POPUP "Com&plementos"
+    BEGIN
+        MENUITEM "&Administrador de complementos\tCtrl+A", IDM_COMPLEMENTOS
+        MENUITEM SEPARATOR
+        MENUITEM "[01] CriptoCodi 1.0                  ", IDM_CRIPTOCODI_1_0
+        , CHECKED
+    END
+    POPUP "A&yuda"
+    BEGIN
+        MENUITEM "&Contenido\tF1",              IDM_CONTENIDO
+        MENUITEM SEPARATOR
+        MENUITEM "&Acerca de...\tF12",          IDM_ACERCADE, CHECKED
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR ACCELERATORS DISCARDABLE 
+BEGIN
+    "A",            IDM_COMPLEMENTOS,       VIRTKEY, CONTROL, NOINVERT
+    "B",            IDM_BORRAR,             VIRTKEY, CONTROL, NOINVERT
+    "D",            IDM_DESENCRIPTAR,       VIRTKEY, CONTROL, NOINVERT
+    "E",            IDM_ENCRIPTAR,          VIRTKEY, CONTROL, NOINVERT
+    "I",            IDM_EXPLORAR,           VIRTKEY, CONTROL, NOINVERT
+    "P",            IDM_PARTIR,             VIRTKEY, CONTROL, NOINVERT
+    "R",            IDM_REUNIR,             VIRTKEY, CONTROL, NOINVERT
+    "T",            IDM_EXTRAER,            VIRTKEY, CONTROL, NOINVERT
+    VK_F1,          IDM_CONTENIDO,          VIRTKEY, NOINVERT
+    VK_F12,         IDM_ACERCADE,           VIRTKEY, NOINVERT
+    VK_F2,          IDM_COMPARAR,           VIRTKEY, NOINVERT
+    VK_F3,          IDM_PASSWORD,           VIRTKEY, NOINVERT
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080a04b0"
+        BEGIN
+            VALUE "Comments", "Fragmentador y defragmentador de archivos con capacidad de encriptacion. Este programa lo hice para mi y es libre, ya verás si lo usas o no.... :-)\0"
+            VALUE "CompanyName", "Sudaka Technologies\0"
+            VALUE "FileDescription", "Parte archivos y los encripta.\0"
+            VALUE "FileVersion", "1, 1, 0, 0\0"
+            VALUE "InternalName", "codi\0"
+            VALUE "LegalCopyright", "Copyright © 2003\0"
+            VALUE "LegalTrademarks", "Peruvian Sudaka Technologies\0"
+            VALUE "OriginalFilename", "codizy\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "codi\0"
+            VALUE "ProductVersion", "1, 1, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x80a, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BACKGRND            BITMAP  DISCARDABLE     "bmpFondo.bmp"
+IDB_MENUACERCADE        BITMAP  DISCARDABLE     "Help.bmp"
+IDB_CARPETA_CERRADA     BITMAP  DISCARDABLE     "bmpCarpeta.bmp"
+IDB_ARCHIVO_CORTADO     BITMAP  DISCARDABLE     "bmpChicos.bmp"
+IDB_ARCHIVO_FUENTE      BITMAP  DISCARDABLE     "bmpGrande.bmp"
+IDB_WIZ_BUSCAR_ARCHIVO  BITMAP  DISCARDABLE     "WizzBuscar.bmp"
+IDB_WIZ_NUMERO          BITMAP  DISCARDABLE     "WizzNumero.bmp"
+IDB_WIZ_FINALIZAR       BITMAP  DISCARDABLE     "WizzFinalizar.BMP"
+IDB_CRIPTO              BITMAP  DISCARDABLE     "WizzCripto.bmp"
+IDB_TAREA               BITMAP  DISCARDABLE     "bmpTarea.bmp"
+IDB_CODI                BITMAP  DISCARDABLE     "bmpCripto.bmp"
+IDB_HOT1                BITMAP  DISCARDABLE     "bitmap1.bmp"
+IDB_HOT2                BITMAP  DISCARDABLE     "bitmap2.bmp"
+IDB_HOT3                BITMAP  DISCARDABLE     "hot3.bmp"
+IDB_HOT4                BITMAP  DISCARDABLE     "hot4.bmp"
+IDB_HOT5                BITMAP  DISCARDABLE     "hot5.bmp"
+IDB_HOT7                BITMAP  DISCARDABLE     "hot7.bmp"
+IDB_TOOL1               BITMAP  DISCARDABLE     "tool1.bmp"
+IDB_TOOL2               BITMAP  DISCARDABLE     "tool2.bmp"
+IDB_TOOL3               BITMAP  DISCARDABLE     "tool3.bmp"
+IDB_TOOL4               BITMAP  DISCARDABLE     "tool4.bmp"
+IDB_TOOL5               BITMAP  DISCARDABLE     "tool5.bmp"
+IDB_TOOL7               BITMAP  DISCARDABLE     "tool7.bmp"
+IDB_MENUCOMPARAR        BITMAP  DISCARDABLE     "bmpCompararMenu.bmp"
+IDB_MENUHELP            BITMAP  DISCARDABLE     "bmpHelpMenu.bmp"
+IDB_MENUSALIR           BITMAP  DISCARDABLE     "menuacer.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PARTIR              "Fragmentar"
+    IDS_REUNIR              "Defragmentar"
+    IDS_ENCRIPTAR           "Encriptar"
+    IDS_DESENCRIPTAR        "Desencriptar"
+    IDS_CONTENIDO           "Complementos"
+    IDS_ACERCADE            "Ayuda"
+    IDS_SALIR               "Salir"
+    IDSM_PARTIR             "Parte un archivo existente en varios.  [CTRL + P]"
+    IDSM_REUNIR             "Reune varios archivos existentes en uno.  [CTRL + R]"
+    IDSM_ENCRIPTAR          "Encripta un archivo personal.  [CTRL + E]"
+    IDSM_DESENCRIPTAR       "Desencripta un archivo encriptado. [CTRL + D]"
+    IDSM_CONTENIDO          "Muestra la ayuda.  [F1]"
+    IDSM_ACERCADE           "Informacion de CODI.  [F12]"
+    IDSM_SALIR              "Salir de CODI. [ALT + F4]"
+    IDSM_COMPARAR           "Compara byte por byte dos archivos para verificar si son identicos. [F2]"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MENUCOMPARAR        "Comparar"
+    IDS_MENUCONTENIDO       "Contenido"
+    IDSM_PASSWORD           "Para aquellos a quienes no se les ocurre una contraseña numerica... [F3]"
+    IDS_PREGUNTA2           "1) ¿Quién es la persona que más amas? ( y NO quién es la persona a quien mas se lo digas) Ejm: nadie, mi mami, la(el) enamorada(o) de mi amigo(a), mi vecina(o), ... hmm... mi chica(o) claro, que te imaginas... (min. 2 -- max. 9 caracteres)"
+    IDS_PREGUNTA3           "1) ¿Quién es la persona que más detestas? Ejm: todos, mi suegra, mi jefe, Alan Damian, ..hmm... el tarado programador que hace que escriba estas zonzeras... (min. 2 -- max. 9 caracteres)"
+    IDS_PREGUNTA1           "1) ¿Cómo te gustaría llamarte? ( y NO como te llamas) Ejm: Superman, Vladi, Bill Gate$, hmm...mi nombre está bien, soy perfecto(a).. (min. 2 -- max. 9 caracteres)"
+    IDS_MENUEXPLORAR        "Iniciar exploración"
+    IDS_MENUCOMPLEMENTOS    "Administrador de complementos"
+    IDS_MENUBORRAR          "Borrar"
+    IDSM_EXPLORAR           "Inicia la exploración [CTRL + I]"
+    IDSM_BORRAR             "Sobreescribe y borra un archivo del sistema [CTRL + B]"
+    IDSM_COMPLEMENTOS       "Carga y descarga de complementos disponibles [CTRL + A]"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDSM_EXTRAER            "Extrae parte de un archivo [CTRL + T]"
+    IDSM_OPCIONES_EXPLORACION 
+                            "Configuración de las opciones de exploracion [CTRL + O]"
+    IDSM_CRIPTOCODI_1_0     "Sistema de encriptación por defecto. [Activo]"
+    IDS_MENUCRIPTO          "Encriptar"
+    IDS_MENUDESENCRIPTAR    "Desencriptar"
+END
+
+#endif    // Spanish (Mexican) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Spanish (Castilian) (unknown sub-lang: 0xA) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ESR)
+#ifdef _WIN32
+LANGUAGE LANG_SPANISH, 0xA
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_MENUBORRAR          BITMAP  DISCARDABLE     "bmpDeleteFile.bmp"
+IDB_MENUCOMPLEMENTOS    BITMAP  DISCARDABLE     "bmpPlugins.bmp"
+IDB_MENUEXPLORAR        BITMAP  DISCARDABLE     "bmpExploration.bmp"
+IDB_MENUCRIPTO          BITMAP  DISCARDABLE     "bmpCriptoMenu.bmp"
+IDB_MENUDESENCRIPTAR    BITMAP  DISCARDABLE     "bmpDesencriptarMenu.bmp"
+IDB_HOT6                BITMAP  DISCARDABLE     "compl8_on.bmp"
+IDB_TOOL6               BITMAP  DISCARDABLE     "compl8.bmp"
+#endif    // Spanish (Castilian) (unknown sub-lang: 0xA) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
